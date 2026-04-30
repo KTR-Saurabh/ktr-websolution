@@ -71,6 +71,39 @@ document.querySelectorAll(".faq-q").forEach((button) => {
   });
 });
 
+const projectModal = document.querySelector("#projectModal");
+if (projectModal) {
+  const title = projectModal.querySelector("#modalTitle");
+  const problem = projectModal.querySelector("#modalProblem");
+  const solution = projectModal.querySelector("#modalSolution");
+  const result = projectModal.querySelector("#modalResult");
+  const close = projectModal.querySelector("#modalClose");
+
+  document.querySelectorAll(".project-open").forEach((button) => {
+    button.addEventListener("click", () => {
+      title.textContent = button.dataset.title;
+      problem.textContent = button.dataset.problem;
+      solution.textContent = button.dataset.solution;
+      result.textContent = button.dataset.result;
+      projectModal.classList.add("show");
+      projectModal.setAttribute("aria-hidden", "false");
+    });
+  });
+
+  function closeProjectModal() {
+    projectModal.classList.remove("show");
+    projectModal.setAttribute("aria-hidden", "true");
+  }
+
+  close.addEventListener("click", closeProjectModal);
+  projectModal.addEventListener("click", (event) => {
+    if (event.target === projectModal) closeProjectModal();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeProjectModal();
+  });
+}
+
 const toTop = document.querySelector("#toTop");
 if (toTop) {
   window.addEventListener("scroll", () => {
