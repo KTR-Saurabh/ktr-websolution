@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ktr-websolution.vercel.app/sitemap.xml

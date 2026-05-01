@@ -1,0 +1,60 @@
+KTR WebSolution - Google Sheets Lead Capture Setup
+
+Use this only if you want form leads to save in Google Sheet.
+WhatsApp forms will still work without this setup.
+
+STEP 1 - Create Google Sheet
+1. Open Google Sheets.
+2. Create a new sheet named: KTR Website Leads
+3. Rename first tab to: Leads
+4. Add these headers in row 1:
+   Created At | Page | Form | Name | Phone | Email | Service | Budget | Message | Raw Data
+
+STEP 2 - Open Apps Script
+1. In Google Sheet, click Extensions.
+2. Click Apps Script.
+3. Delete existing code.
+4. Paste this code:
+
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Leads");
+  var data = JSON.parse(e.postData.contents || "{}");
+  var fields = data.fields || {};
+
+  sheet.appendRow([
+    data.createdAt || new Date().toISOString(),
+    data.page || "",
+    data.form || "",
+    fields["Name"] || fields["Full Name"] || fields["Your Name"] || "",
+    fields["Phone"] || fields["Phone Number"] || fields["Friend WhatsApp"] || "",
+    fields["Email"] || fields["Email Address"] || "",
+    fields["Service Required"] || "",
+    fields["Budget Range"] || "",
+    fields["Message"] || "",
+    JSON.stringify(data)
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ ok: true }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+STEP 3 - Deploy Apps Script
+1. Click Deploy.
+2. Click New deployment.
+3. Select type: Web app.
+4. Execute as: Me.
+5. Who has access: Anyone.
+6. Click Deploy.
+7. Copy the Web app URL.
+
+STEP 4 - Connect Website
+1. Open: assets/app.js
+2. Find this line:
+   const LEAD_ENDPOINT = "";
+3. Paste your Apps Script URL:
+   const LEAD_ENDPOINT = "PASTE_YOUR_WEB_APP_URL_HERE";
+4. Upload updated assets/app.js to GitHub.
+5. Vercel will redeploy automatically.
+
+After this, every form lead will save to Google Sheet and also open WhatsApp.
