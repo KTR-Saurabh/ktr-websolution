@@ -1,0 +1,36 @@
+<svg width="560" height="150" viewBox="0 0 560 150" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">KTR WebSolution</title>
+  <desc id="desc">KTR WebSolution premium agency wordmark logo.</desc>
+  <defs>
+    <linearGradient id="bg" x1="17" y1="13" x2="130" y2="134" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10204B"/>
+      <stop offset="0.52" stop-color="#071124"/>
+      <stop offset="1" stop-color="#00B4FF"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="22" y1="28" x2="122" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.44" stop-color="#00B4FF"/>
+      <stop offset="1" stop-color="#76DDFF"/>
+    </linearGradient>
+    <filter id="softGlow" x="-16" y="-16" width="170" height="170" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0 0 0 0 0 0.705882 0 0 0 0 1 0 0 0 0.34 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect x="16" y="17" width="116" height="116" rx="28" fill="url(#bg)"/>
+  <rect x="17.5" y="18.5" width="113" height="113" rx="26.5" stroke="#FFFFFF" stroke-opacity="0.13" stroke-width="3"/>
+  <g filter="url(#softGlow)">
+    <path d="M40 46V104" stroke="url(#accent)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M71 46L45 75L72 104" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M78 47H113" stroke="#FFFFFF" stroke-width="8.5" stroke-linecap="round"/>
+    <path d="M96 47V104" stroke="#FFFFFF" stroke-width="8.5" stroke-linecap="round"/>
+    <path d="M111 73C111 65.5 105.8 61 96 61H84V104" stroke="#76DDFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M96 78L115 104" stroke="#76DDFF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <path d="M39 114H111" stroke="#00B4FF" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+  <text x="158" y="69" fill="#FFFFFF" font-family="Poppins, Inter, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="0">KTR WebSolution</text>
+  <text x="160" y="102" fill="#AAB8D4" font-family="Poppins, Inter, Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="0">Turning Ideas Into Digital Reality</text>
+  <path d="M160 118H370" stroke="#00B4FF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M384 118H440" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="4" stroke-linecap="round"/>
+</svg>

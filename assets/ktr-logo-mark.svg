@@ -1,0 +1,34 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">KTR WebSolution logo mark</title>
+  <desc id="desc">Premium dark navy and electric blue KTR monogram.</desc>
+  <defs>
+    <linearGradient id="bg" x1="24" y1="14" x2="138" y2="148" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10204B"/>
+      <stop offset="0.48" stop-color="#071124"/>
+      <stop offset="1" stop-color="#00B4FF"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="28" y1="24" x2="132" y2="138" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.38" stop-color="#00B4FF"/>
+      <stop offset="1" stop-color="#76DDFF"/>
+    </linearGradient>
+    <filter id="glow" x="-20" y="-20" width="200" height="200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="8"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.705882 0 0 0 0 1 0 0 0 0.45 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+  <rect x="8" y="8" width="144" height="144" rx="34" fill="url(#bg)"/>
+  <rect x="9.5" y="9.5" width="141" height="141" rx="32.5" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="3"/>
+  <path d="M37 45V116" stroke="url(#stroke)" stroke-width="13" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M75 44L43 80L77 116" stroke="url(#stroke)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M82 46H124" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+  <path d="M103 46V116" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+  <path d="M121 79C121 69.5 114.5 64 103 64H88V116" stroke="#76DDFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M103 84L126 116" stroke="#76DDFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M30 127H130" stroke="#00B4FF" stroke-width="5" stroke-linecap="round" opacity="0.72"/>
+</svg>
