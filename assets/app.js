@@ -1,5 +1,5 @@
 const WA_NUMBER = "919354170598";
-const LEAD_ENDPOINT = "";
+const LEAD_ENDPOINT = window.KTR_LEAD_ENDPOINT || localStorage.getItem("ktrLeadEndpoint") || "";
 const textMemory = new Map();
 const translations = {
   "Home": "होम",
@@ -190,6 +190,37 @@ document.querySelectorAll(".filter-btn").forEach((button) => {
   });
 });
 
+const blogSearch = document.querySelector("#blogSearch");
+const blogCount = document.querySelector("#blogCount");
+let activeBlogFilter = "all";
+function updateBlogCards() {
+  const cards = document.querySelectorAll("[data-blog-card]");
+  if (!cards.length) return;
+  const query = blogSearch ? blogSearch.value.trim().toLowerCase() : "";
+  let visible = 0;
+  cards.forEach((card) => {
+    const categories = card.dataset.cat || "";
+    const text = card.textContent.toLowerCase();
+    const matchFilter = activeBlogFilter === "all" || categories.includes(activeBlogFilter);
+    const matchSearch = !query || text.includes(query);
+    const show = matchFilter && matchSearch;
+    card.classList.toggle("hidden", !show);
+    if (show) visible += 1;
+  });
+  if (blogCount) blogCount.textContent = visible === cards.length ? "Showing all guides" : `Showing ${visible} matching guides`;
+}
+
+document.querySelectorAll("[data-blog-filter]").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll("[data-blog-filter]").forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+    activeBlogFilter = button.dataset.blogFilter;
+    updateBlogCards();
+  });
+});
+if (blogSearch) blogSearch.addEventListener("input", updateBlogCards);
+updateBlogCards();
+
 document.querySelectorAll(".faq-q").forEach((button) => {
   button.addEventListener("click", () => {
     button.closest(".faq-item").classList.toggle("open");
@@ -368,5 +399,4 @@ function initThreeHero() {
   animate();
 }
 
-initLanguageSwitch();
 initThreeHero();
